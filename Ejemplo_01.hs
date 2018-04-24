@@ -11,7 +11,7 @@ aprobo nota = nota >= 6
 -- 2 + 3 --> (+) 2 3 conversion a notacion prefija
 
 --Constanes
-edadSeniorBurns = 120 
+edSeniorBurns = 120 
 segundoNombre = "jay"
 
 --Guardas, no ifs
@@ -30,25 +30,53 @@ longitudPar = even.length
 ------------------------------------------------------------------------------------
 --Defino un tipo de datos
 --Tupla-> tipo de datos compusto, con elementos relacionados
-type Persona = (String,Integer,String) --tupla de 3 elementos
+type Pers = (String,Integer,String) --tupla de 3 elementos
 
-laura :: Persona
+laura :: Pers
 laura = ("Laura",32,"Av. Libertador 747")
 
-edad :: Persona -> Integer
-edad (_,e,_) = e --Pattern Matching--
+ed :: Pers -> Integer
+ed (_,e,_) = e --Pattern Matching--
 
 mayor18 :: Integer -> Bool
 mayor18 ed = ed > 18
 
-esMayor :: Persona -> Bool
-esMayor = mayor18.edad
+esMayor :: Pers -> Bool
+esMayor = mayor18.ed
 
---Main> (not.esMayor) laura /// Main> (not.mayor18.edad) laura /// Puedo componer mientras que la imagen de mi funcion sea del mismo tipo que el domino de la proxima funcion
+--Main> (not.esMayor) laura /// Main> (not.mayor18.ed) laura /// Puedo componer mientras que la imagen de mi funcion sea del mismo tipo que el domino de la proxima funcion
 
 ------------------------------------------------------------------------------------
 
+data Person = Person String Integer
 
+carlos :: Person
+carlos = Person "Carlos" 23
+
+elNombre :: Person -> String
+elNombre (Person n _) = n  --La sintaxis previamente definida no requiere los parentesis pero la funcion los necesita para delimitar el parametro recibido
+
+laEdad :: Person -> Integer
+laEdad (Person _ e) = e
+
+-------------------------------------------------------------------------------------
+--Record Sintax
+
+data Persona = Persona {
+        nombre :: String,
+        apellido :: String,
+        edad :: Int,
+        domicilio :: String,
+        fechaDeNacimiento :: (Int,Int,Int)        
+} deriving (Show)
+
+juan = Persona {
+        nombre = "Juan",
+        edad = 29,
+        apellido = "Acosta",
+        domicilio ="Caseros 152",
+        fechaDeNacimiento =(12,05,1989)
+} 
 
 
 
