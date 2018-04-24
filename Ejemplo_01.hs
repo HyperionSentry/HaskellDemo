@@ -1,3 +1,4 @@
+import Text.Show.Functions
 
 --Las variables son incognitas no espacios de memoria
 --f(x)=x*2
@@ -29,7 +30,7 @@ longitudPar = even.length
 ------------------------------------------------------------------------------------
 --Defino un tipo de datos
 --Tupla-> tipo de datos compusto, con elementos relacionados
-type Persona = (String,Integer,String) --tupla de 3 elemntos
+type Persona = (String,Integer,String) --tupla de 3 elementos
 
 laura :: Persona
 laura = ("Laura",32,"Av. Libertador 747")
