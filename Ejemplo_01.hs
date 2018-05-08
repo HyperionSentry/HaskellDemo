@@ -29,8 +29,8 @@ longitudPar :: [Char] -> Bool --Definicion de tipo de dato de funcion longitudPa
 longitudPar = even.length
 ------------------------------------------------------------------------------------
 --Defino un tipo de datos
---Tupla-> tipo de datos compusto, con elementos relacionados
-type Pers = (String,Integer,String) --tupla de 3 elementos
+--Tupla-> tipo de datos compuesto, con elementos relacionados
+type Pers = (String,Integer,String) --tupla de 3 elementos - Sinonimo de tipo
 
 laura :: Pers
 laura = ("Laura",32,"Av. Libertador 747")
